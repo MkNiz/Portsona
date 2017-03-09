@@ -9,6 +9,8 @@ const api = require('./server/routes/api');
 
 const app = express();
 
+const Model = require('./server/models/model_manifest')(mongoose);
+
 //Connect to Mongo using mongoose
 mongoose.connect(process.env.MONGODB_URI, function(err){
   if(err){
@@ -19,7 +21,11 @@ Error connecting to database.
     `);
     process.exit(1);
   }else{
-    console.log("\nSuccessfully connected to MongoDB\n");
+    console.log(`
+*------------------------------------------*
+| Successfully connected to MongoDB! Nice. |
+*------------------------------------------*
+    `);
   }
 });
 
@@ -38,4 +44,5 @@ const port = process.env.PORT || '6969';
 app.set('port', port);
 
 const server = http.createServer(app);
-server.listen(port, () => console.log(`App running on localhost:${port}`));
+server.listen(port, () => console.log(`
+*--> App running on port ${port}`));
