@@ -1,11 +1,27 @@
+require('dotenv').config()
 const express = require('express');
 const path = require('path');
 const http = require('http');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose')
 
 const api = require('./server/routes/api');
 
 const app = express();
+
+//Connect to Mongo using mongoose
+mongoose.connect(process.env.MONGODB_URI, function(err){
+  if(err){
+    console.log(`
+Error connecting to database.
+    Make sure the MONGODB_URI environmental variable is set and accurate,
+    and also that the database exists and is running.
+    `);
+    process.exit(1);
+  }else{
+    console.log("\nSuccessfully connected to MongoDB\n");
+  }
+});
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -22,4 +38,4 @@ const port = process.env.PORT || '6969';
 app.set('port', port);
 
 const server = http.createServer(app);
-server.listen(port, () => console.log(`API running on localhost:${port}`));
+server.listen(port, () => console.log(`App running on localhost:${port}`));
