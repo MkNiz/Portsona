@@ -5,21 +5,19 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { BioComponent } from './bio/bio.component';
 
 import { ConfigService } from './config.service';
 
 const ROUTES = [
   {
     path: '',
-    component: BioComponent
+    component: null
   }
 ];
 
 @NgModule({
   declarations: [
-    AppComponent,
-    BioComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,

@@ -4,5 +4,6 @@ module.exports = (mongoose) => {
     // Models to load:
     User: require(pre + 'user')(mongoose),
     Config: require(pre + 'config')(mongoose),
+    Page: require(pre + 'page')(mongoose)
   };
 };

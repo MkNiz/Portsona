@@ -31,8 +31,7 @@ const getConfig = (req, res, next) => {
     } else if(!cfg){
       cfg = new Model.Config({
         name: "Default McDefaultson",
-        headline: "I Love Being the Default",
-        bio: "Im good."
+        headline: "I Love Being the Default"
       });
       cfg.save((err) => {
         if(err) { throw err; } else {
@@ -61,8 +60,7 @@ router.get('/', (req, res) => {
 router.get('/config', getConfig, (req, res) => {
   res.status(req.stcode || 200).send({
     name: req.config.name,
-    headline: req.config.headline,
-    bio: req.config.bio
+    headline: req.config.headline
   });
 });
 
