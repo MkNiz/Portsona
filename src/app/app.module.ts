@@ -11,10 +11,8 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { PagesComponent } from './pages/pages.component';
 
 const ROUTES = [
-  {
-    path: '',
-    component: null
-  }
+  { path: '/page/:page_url', component: PagesComponent },
+  { path: '', component: HomepageComponent }
 ];
 
 @NgModule({
