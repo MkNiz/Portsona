@@ -7,6 +7,8 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 
 import { ConfigService } from './config.service';
+import { HomepageComponent } from './homepage/homepage.component';
+import { PagesComponent } from './pages/pages.component';
 
 const ROUTES = [
   {
@@ -17,7 +19,9 @@ const ROUTES = [
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomepageComponent,
+    PagesComponent
   ],
   imports: [
     BrowserModule,

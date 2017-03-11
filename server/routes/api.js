@@ -64,4 +64,28 @@ router.get('/config', getConfig, (req, res) => {
   });
 });
 
+router.get('/pages', (req, res) => {
+  Model.Page.find((err, pages) => {
+    if(err) { throw err; } else {
+      res.send({ pages: pages });
+    }
+  });
+});
+
+router.get('/page/:page_url', (req, res) => {
+  Model.Page.findOne({url: req.params.page_url}, (err, page) => {
+    if(err) { throw err; } else {
+      res.send({ page: page });
+    }
+  });
+});
+
+router.get('/homepage', (req, res) => {
+  Model.Page.findOne({homepage: true}, (err, page) => {
+    if(err) { throw err; } else {
+      res.send({ page: page });
+    }
+  });
+});
+
 module.exports = router;
