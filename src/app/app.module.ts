@@ -11,7 +11,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { PagesComponent } from './pages/pages.component';
 
 const ROUTES = [
-  { path: '/page/:page_url', component: PagesComponent },
+  { path: 'page/:page_url', component: PagesComponent },
   { path: '', component: HomepageComponent }
 ];
 
