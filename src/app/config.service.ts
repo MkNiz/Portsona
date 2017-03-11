@@ -6,6 +6,6 @@ import 'rxjs/add/operator/map';
 export class ConfigService {
   constructor(private http: Http) {}
   getConfig(){
-    return this.http.get('/api/config').map(res => res.json())
+    return this.http.get('/api/config').map(res => res.json());
   }
 }
