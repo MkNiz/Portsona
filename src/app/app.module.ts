@@ -11,9 +11,15 @@ import { PagesService } from './pages.service';
 
 import { HomepageComponent } from './homepage/homepage.component';
 import { PagesComponent } from './pages/pages.component';
+import { AdminComponent } from './admin/admin.component';
+import { SettingsComponent } from './admin/settings/settings.component';
+import { AdminPagesComponent } from './admin/admin-pages/admin-pages.component';
 
 const ROUTES = [
   { path: 'page/:page_url', component: PagesComponent },
+  { path: 'admin', component: AdminComponent },
+  { path: 'admin/pages', component: AdminPagesComponent},
+  { path: 'admin/settings', component: SettingsComponent},
   { path: '', component: HomepageComponent }
 ];
 
@@ -21,7 +27,10 @@ const ROUTES = [
   declarations: [
     AppComponent,
     HomepageComponent,
-    PagesComponent
+    PagesComponent,
+    AdminComponent,
+    SettingsComponent,
+    AdminPagesComponent
   ],
   imports: [
     BrowserModule,
